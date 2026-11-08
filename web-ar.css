@@ -1,0 +1,15 @@
+/* Arabic website only; the jury uses its original stylesheet. */
+:root{font:16px/1.65 "Noto Sans Arabic","Geeza Pro",Tahoma,Arial,sans-serif}
+.space{margin-left:0;margin-inline-start:auto}
+.brand,h1,h2{font-family:"Noto Naskh Arabic","Geeza Pro",Tahoma,serif;letter-spacing:normal;line-height:1.35}
+.section,th{letter-spacing:normal;text-transform:none}.section{font-size:.86rem}
+#range,.count,.environment{unicode-bidi:plaintext}
+.draw-actions,.panelhead,.confirm{flex-wrap:wrap}
+.draw-actions{display:flex;gap:.6rem}
+.file-button{position:relative;display:inline-flex;max-width:100%;padding:.45rem .85rem;color:var(--forest);background:#f1f4ed;border:1px solid var(--rule);border-radius:6px;cursor:pointer;margin:.4rem 0}
+.file-button input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}
+.file-button:focus-within{outline:3px solid #bf903e;outline-offset:3px}
+.file-button:has(input:disabled){opacity:.5}
+dialog{max-width:min(32rem,calc(100% - 2rem));border:1px solid var(--rule);border-radius:12px;padding:1.5rem;color:var(--ink);background:#fffefa}
+dialog::backdrop{background:#172f2880}
+@media(max-width:420px){.levelbar{align-items:baseline;flex-wrap:wrap}.panelhead{gap:8px}.count{white-space:normal}}
