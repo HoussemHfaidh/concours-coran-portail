@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#173d34"><title>Élèves · Concours Coran</title>
-  <link rel="stylesheet" href="./style.css"><script type="module" src="./app.js"></script>
+  <link rel="stylesheet" href="./style.css?v=inscrits-2"><script type="module" src="./app.js?v=inscrits-2"></script>
 </head>
 <body>
 <header><div class="bar"><span class="brand"><span class="mark" aria-hidden="true">۞</span>Concours Coran</span><span class="space">Espace organisateur</span></div></header>
@@ -19,7 +19,7 @@
         <table><thead><tr><th scope="col">Identifiant</th><th scope="col">Nom de l’élève</th></tr></thead><tbody id="students"></tbody></table>
         <div class="pager"><span id="range"></span><div><button id="prev" class="secondary" aria-label="Page précédente">←</button><button id="next" class="secondary" aria-label="Page suivante">→</button></div></div>
       </section>
-      <aside class="panel import"><p class="section">Import par niveau</p><h2>Importer un fichier</h2>
+      <aside class="panel import" id="import-pane"><p class="section">Import par niveau</p><h2>Importer un fichier</h2>
         <p>Ajoutez des élèves ou corrigez leurs noms avec un fichier CSV UTF-8.</p>
         <div class="drop" id="drop"><span aria-hidden="true" class="uploadmark">↑</span><label for="file">Choisir un fichier CSV</label><input id="file" type="file" accept=".csv,text/csv"><small>ou déposez-le ici</small></div>
         <a class="template" href="./modele.csv" download="modele-eleves.csv">↓ Télécharger le modèle CSV</a>
@@ -37,11 +37,11 @@
       <p id="subject-coverage"></p><div id="subject-list"></div><hr>
       <label for="subject-file"><strong>Importer les sujets Excel de ce niveau</strong></label>
       <p>Choisissez le classeur contenant les feuilles <bdi>الأسئلة</bdi> et <bdi>جميع الآيات</bdi>.</p>
-      <p><button id="publish-level">Ouvrir le tirage de ce niveau</button></p><input type="file" id="subject-file" accept=".xlsx,.xlsm">
+      <p><button id="check-in">Ouvrir les passages de vérification</button> <button id="publish-level">Ouvrir le tirage de ce niveau</button></p><input type="file" id="subject-file" accept=".xlsx,.xlsm"><details><summary>Comptes des professeurs</summary><label>Importer les affectations existantes <input type="file" id="judge-profiles" accept=".json"></label></details>
       </div>
       <div id="subject-message" role="status" aria-live="polite"></div>
       <div class="panel preview" id="subject-preview" hidden><p class="section" id="subject-source"></p><h2>Aperçu des sujets</h2><p id="subject-summary"></p><div id="subject-review"></div><div class="confirm"><button id="subject-cancel" class="secondary">Annuler</button><button id="subject-save">Enregistrer les sujets complets</button></div></div>
     </section>
   </section>
-<footer class="links"><a id="station-link" href="./?session=essai">Ouvrir l’écran élève</a> · <a href="./organisateur.html">Organisateur · essai partagé</a></footer></main>
+<footer class="links"><a id="station-link" href="./">Ouvrir l’écran élève</a></footer></main>
 </body></html>
