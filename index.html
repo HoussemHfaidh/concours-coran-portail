@@ -1,35 +1,10 @@
 <!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#173d34"><title>Élèves · Concours Coran</title>
-  <link rel="stylesheet" href="./style.css"><script type="module" src="./app.js"></script>
-</head>
-<body>
-<header><div class="bar"><span class="brand"><span class="mark" aria-hidden="true">۞</span>Concours Coran</span><span class="space">Espace organisateur</span></div></header>
-<main>
-  <div class="title"><div><h1>Liste des élèves</h1></div><div class="environment" id="env" hidden></div></div>
-  <div id="gate" class="panel gate"><h2 id="gate-title">Connexion au portail</h2><p id="gate-text" role="status">Vérification de l’accès…</p></div>
-  <section id="workspace" hidden aria-label="Gestion des listes">
-    <div class="levelbar"><span>Niveau</span><div id="levels" role="group" aria-label="Choisir le niveau"></div></div>
-    <div class="grid">
-      <section class="panel roster"><div class="panelhead"><div><p class="section" id="level-label"></p><h2>Élèves inscrits</h2></div><span class="count" id="count"></span></div>
-        <label class="search" for="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Rechercher par nom ou identifiant" aria-label="Rechercher par nom ou identifiant"></label>
-        <table><thead><tr><th scope="col">Identifiant</th><th scope="col">Nom de l’élève</th></tr></thead><tbody id="students"></tbody></table>
-        <div class="pager"><span id="range"></span><div><button id="prev" class="secondary" aria-label="Page précédente">←</button><button id="next" class="secondary" aria-label="Page suivante">→</button></div></div>
-      </section>
-      <aside class="panel import"><p class="section">Import par niveau</p><h2>Importer un fichier</h2>
-        <p>Ajoutez des élèves ou corrigez leurs noms avec un fichier CSV UTF-8.</p>
-        <div class="drop" id="drop"><span aria-hidden="true" class="uploadmark">↑</span><label for="file">Choisir un fichier CSV</label><input id="file" type="file" accept=".csv,text/csv"><small>ou déposez-le ici</small></div>
-        <a class="template" href="./modele.csv" download="modele-eleves.csv">↓ Télécharger le modèle CSV</a>
-        <p class="locked" id="locked" hidden></p>
-      </aside>
-    </div>
-    <div id="message" role="status" aria-live="polite"></div>
-    <section id="preview" class="panel preview" hidden><div class="panelhead"><div><p class="section" id="file-label"></p><h2>Aperçu de l’import</h2></div><button id="discard" class="secondary">Annuler</button></div>
-      <p id="summary"></p><div class="scroll"><table><thead><tr><th>Ligne</th><th>Identifiant</th><th>Nom</th><th>Résultat</th></tr></thead><tbody id="rows"></tbody></table></div>
-      <div class="confirm"><button id="apply">Enregistrer le brouillon</button></div>
-    </section>
-  </section>
-</main>
-</body></html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#173d34"><title>Tirage des sujets · Concours Coran</title><link rel="stylesheet" href="./style.css"><script type="module" src="./student.js"></script></head>
+<body><header><div class="bar"><span class="brand"><span class="mark" aria-hidden="true">۞</span>Concours Coran</span><span class="space">Espace élève</span></div></header>
+<main><div class="title"><div><p class="section" id="edition">Concours · Tirage des sujets</p><h1>Choisis ton niveau</h1></div></div>
+<div class="levelbar"><div id="levels" role="group" aria-label="Choisir ton niveau"></div></div>
+<p id="notice" role="status" aria-live="polite">Ouverture de la liste commune…</p>
+<section id="lookup" hidden class="panel"><p class="section" id="lvl"></p><h2>Retrouve ton nom</h2><label class="search"><input type="search" id="find" aria-label="Rechercher par nom ou identifiant" placeholder="Ton nom ou ton identifiant" autocomplete="off"></label><div id="people" class="people"></div></section>
+<section id="board" hidden class="panel"><div class="panelhead"><div><p class="section" id="board-label"></p><h2>Choisis un sujet</h2></div><button id="back" class="secondary">Changer d’élève</button></div><p id="board-help"></p><div id="tiles" class="tiles"></div></section>
+<div id="result" hidden class="panel choice" role="status"></div>
+<footer class="links"><a href="./organisateur.html">Organisateur · essai partagé</a> · <a href="./organisateur.html?session=concours">Gestion du concours</a></footer></main></body></html>

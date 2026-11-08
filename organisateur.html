@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#173d34"><title>Élèves · Concours Coran</title>
+  <link rel="stylesheet" href="./style.css"><script type="module" src="./app.js"></script>
+</head>
+<body>
+<header><div class="bar"><span class="brand"><span class="mark" aria-hidden="true">۞</span>Concours Coran</span><span class="space">Espace organisateur</span></div></header>
+<main>
+  <div class="title"><div><h1>Liste des élèves</h1></div><div class="environment" id="env" hidden></div></div>
+  <div id="gate" class="panel gate"><h2 id="gate-title">Ouverture du portail</h2><p id="gate-text" role="status">Vérification de l’accès…</p></div>
+  <section id="workspace" hidden aria-label="Gestion des listes">
+    <nav class="modes" aria-label="Gestion du concours"><button id="mode-students" aria-pressed="true">Élèves</button><button id="mode-subjects" aria-pressed="false">Sujets</button></nav>
+    <div class="levelbar"><span>Niveau</span><div id="levels" role="group" aria-label="Choisir le niveau"></div></div>
+    <div id="student-mode"><div class="grid">
+      <section class="panel roster"><div class="panelhead"><div><p class="section" id="level-label"></p><h2>Élèves inscrits</h2></div><span class="count" id="count"></span></div>
+        <label class="search" for="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Rechercher par nom ou identifiant" aria-label="Rechercher par nom ou identifiant"></label>
+        <table><thead><tr><th scope="col">Identifiant</th><th scope="col">Nom de l’élève</th></tr></thead><tbody id="students"></tbody></table>
+        <div class="pager"><span id="range"></span><div><button id="prev" class="secondary" aria-label="Page précédente">←</button><button id="next" class="secondary" aria-label="Page suivante">→</button></div></div>
+      </section>
+      <aside class="panel import"><p class="section">Import par niveau</p><h2>Importer un fichier</h2>
+        <p>Ajoutez des élèves ou corrigez leurs noms avec un fichier CSV UTF-8.</p>
+        <div class="drop" id="drop"><span aria-hidden="true" class="uploadmark">↑</span><label for="file">Choisir un fichier CSV</label><input id="file" type="file" accept=".csv,text/csv"><small>ou déposez-le ici</small></div>
+        <a class="template" href="./modele.csv" download="modele-eleves.csv">↓ Télécharger le modèle CSV</a>
+        <p class="locked" id="locked" hidden></p>
+      </aside>
+    </div>
+    <div id="message" role="status" aria-live="polite"></div>
+    <section id="preview" class="panel preview" hidden><div class="panelhead"><div><p class="section" id="file-label"></p><h2>Aperçu de l’import</h2></div><button id="discard" class="secondary">Annuler</button></div>
+      <p id="summary"></p><div class="scroll"><table><thead><tr><th>Ligne</th><th>Identifiant</th><th>Nom</th><th>Résultat</th></tr></thead><tbody id="rows"></tbody></table></div>
+      <div class="confirm"><button id="apply">Enregistrer le brouillon</button></div>
+    </section>
+    </div>
+    <section id="subject-mode" hidden>
+      <div class="panel"><div class="panelhead"><div><p class="section" id="subject-level"></p><h2>Sujets en préparation</h2></div><span id="subject-count" class="count"></span></div>
+      <p id="subject-coverage"></p><div id="subject-list"></div><hr>
+      <label for="subject-file"><strong>Importer les sujets Excel de ce niveau</strong></label>
+      <p>Choisissez le classeur contenant les feuilles <bdi>الأسئلة</bdi> et <bdi>جميع الآيات</bdi>.</p>
+      <p><button id="publish-level">Ouvrir le tirage de ce niveau</button></p><input type="file" id="subject-file" accept=".xlsx,.xlsm">
+      </div>
+      <div id="subject-message" role="status" aria-live="polite"></div>
+      <div class="panel preview" id="subject-preview" hidden><p class="section" id="subject-source"></p><h2>Aperçu des sujets</h2><p id="subject-summary"></p><div id="subject-review"></div><div class="confirm"><button id="subject-cancel" class="secondary">Annuler</button><button id="subject-save">Enregistrer les sujets complets</button></div></div>
+    </section>
+  </section>
+<footer class="links"><a id="station-link" href="./?session=essai">Ouvrir l’écran élève</a> · <a href="./organisateur.html">Organisateur · essai partagé</a></footer></main>
+</body></html>
