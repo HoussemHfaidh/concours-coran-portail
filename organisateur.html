@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#173d34"><title>بوابة المنظّم · مسابقة القرآن الكريم</title>
-  <link rel="stylesheet" href="./style.css"><link rel="stylesheet" href="./web-ar.css?v=ar1">
-  <script type="module" src="./app.js?v=ar1"></script>
+  <link rel="stylesheet" href="./style.css"><link rel="stylesheet" href="./web-ar.css?v=gestion2">
+  <script type="module" src="./app.js?v=gestion2"></script>
 </head>
 <body>
 <header><div class="bar"><span class="brand"><span class="mark" aria-hidden="true">۞</span>مسابقة القرآن الكريم</span><span class="space">بوابة المنظّم</span></div></header>
@@ -17,13 +17,13 @@
     <div id="student-mode"><div class="grid">
       <section class="panel roster"><div class="panelhead"><div><p class="section" id="level-label"></p><h2>التلاميذ المسجّلون</h2></div><span class="count" id="count"></span></div>
         <label class="search" for="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="ابحث بالاسم أو برقم التسجيل" aria-label="ابحث بالاسم أو برقم التسجيل"></label>
-        <table><thead><tr><th scope="col">رقم التسجيل</th><th scope="col">اسم التلميذ</th></tr></thead><tbody id="students"></tbody></table>
+        <table><thead><tr><th scope="col">رقم التسجيل</th><th scope="col">اسم التلميذ</th><th scope="col" id="student-actions-head" hidden>الإجراءات</th></tr></thead><tbody id="students"></tbody></table>
         <div class="pager"><span id="range"></span><div><button id="prev" class="secondary" aria-label="الصفحة السابقة">→</button><button id="next" class="secondary" aria-label="الصفحة التالية">←</button></div></div>
       </section>
       <aside class="panel import" id="import-pane"><p class="section">الاستيراد حسب المستوى</p><h2>استيراد قائمة التلاميذ</h2>
         <p>لإضافة تلاميذ أو تصحيح أسمائهم، ارفع ملف <bdi>CSV</bdi> بترميز <bdi>UTF-8</bdi> يحتوي على عمودين: رقم التسجيل واسم التلميذ.</p>
         <div class="drop" id="drop"><span aria-hidden="true" class="uploadmark">↑</span><label for="file">اختر ملف CSV</label><input id="file" type="file" accept=".csv,text/csv"><small>أو اسحب الملف وأفلته هنا</small></div>
-        <a class="template" href="./modele.csv?v=ar1" download="قائمة-التلاميذ.csv">↓ تنزيل نموذج CSV</a>
+        <a class="template" href="./modele.csv?v=gestion2" download="قائمة-التلاميذ.csv">↓ تنزيل نموذج CSV</a>
         <p class="locked" id="locked" hidden></p>
       </aside>
     </div>

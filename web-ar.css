@@ -13,3 +13,10 @@
 dialog{max-width:min(32rem,calc(100% - 2rem));border:1px solid var(--rule);border-radius:12px;padding:1.5rem;color:var(--ink);background:#fffefa}
 dialog::backdrop{background:#172f2880}
 @media(max-width:420px){.levelbar{align-items:baseline;flex-wrap:wrap}.panelhead{gap:8px}.count{white-space:normal}}
+.record-actions{display:inline-flex;gap:.35rem;flex-wrap:wrap}.record-actions button{padding:.3rem .65rem;min-height:36px}
+.danger{color:#912d23}dialog label:not(.file-button){display:grid;gap:.3rem}dialog input:not([type=file]){width:100%;padding:.5rem;font:inherit;border:1px solid var(--rule);border-radius:6px}
+dialog{max-height:90vh;overflow:auto}.record-actions button:disabled{cursor:default}
+
+.subject-entry{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;gap:.5rem;border-top:1px solid var(--rule);padding:.3rem 0}
+#subject-list .subject-entry details{border:0}.subject-entry .record-actions{padding-block:.2rem}
+@media(max-width:460px){.record-actions{gap:.2rem}.record-actions button{padding:.25rem .45rem}.roster th,.roster td{padding:.4rem}.subject-entry{gap:.25rem}}
