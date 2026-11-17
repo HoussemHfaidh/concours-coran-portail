@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#173d34"><title>شاشة العرض · مسابقة القرآن الكريم</title>
+  <link rel="stylesheet" href="./style.css"><link rel="stylesheet" href="./web-ar.css"><link rel="stylesheet" href="./projection.css">
+  <script type="module" src="./projection.js"></script>
+</head>
+<body class="projection">
+  <header class="projection-toolbar">
+    <a class="projection-brand" href="./organisateur.html"><span class="mark" aria-hidden="true">۞</span><span>مسابقة القرآن الكريم<small>شاشة العرض</small></span></a>
+    <p id="connection-status" role="status">جارٍ الاتصال…</p>
+    <div class="toolbar-actions"><button id="choose-student" class="quiet" disabled>اختيار التلميذ</button><button id="fullscreen" class="quiet">⛶ ملء الشاشة</button></div>
+  </header>
+  <main class="projection-stage">
+    <section class="reader-pane" dir="rtl" aria-label="قراءة المصحف">
+      <div class="reader-heading"><span class="section">المصحف الشريف</span><span id="reader-question">بانتظار التلميذ</span></div>
+      <div class="reading-reference" id="reading-reference" hidden><span id="from-reference" dir="auto"></span><span aria-hidden="true">←</span><span id="to-reference" dir="auto"></span></div>
+      <div id="reader-empty" class="reader-empty"><span class="empty-ornament" aria-hidden="true">۞</span><h2 id="empty-title">لكل تلميذ موضوعه</h2><p id="empty-text">اختر التلميذ لعرض الموضوع الذي اختاره وأسئلته الأربعة.</p><button id="retry" class="secondary" hidden>إعادة المحاولة</button></div>
+      <div id="mushaf" class="mushaf" tabindex="0" role="region" aria-label="صفحات المصحف، مرّر للقراءة" hidden></div>
+      <div class="reader-controls" id="reader-controls" hidden>
+        <button id="page-previous" class="secondary" aria-label="الصفحة السابقة">→</button><span id="page-label"></span><button id="page-next" class="secondary" aria-label="الصفحة التالية">←</button><button id="question-start" class="secondary">بداية السؤال</button>
+      </div>
+    </section>
+    <aside class="student-pane" dir="rtl" aria-label="التلميذ والسؤال الحالي">
+      <div class="participant-heading"><span>المتسابق</span><span id="draw-edition"></span></div>
+      <div class="student-identity"><div class="student-avatar" id="student-avatar" aria-hidden="true">۞</div><p id="student-registration" class="registration">أهلًا بكم في مسابقة القرآن الكريم</p><h1 id="student-name" dir="auto">بانتظار التلميذ</h1>
+        <div class="student-facts"><span id="student-level">المستوى —</span><span id="subject-number">الموضوع —</span></div>
+      </div>
+      <section class="question-panel" aria-label="أسئلة الموضوع">
+        <div class="question-panel-heading"><h2>أسئلة الموضوع</h2><span id="question-position" role="status">— / 4</span></div>
+        <div id="question-buttons" class="question-buttons" role="group" aria-label="اختيار السؤال المعروض"></div>
+        <div class="question-navigation"><button id="question-previous" class="quiet" disabled>→ السؤال السابق</button><button id="question-next" disabled>السؤال التالي ←</button></div>
+      </section>
+      <p class="projection-note">مسابقة القرآن الكريم <span aria-hidden="true">۞</span> بالتوفيق لجميع المتسابقين</p>
+    </aside>
+  </main>
+  <dialog id="student-picker" aria-labelledby="picker-title">
+    <div class="picker-heading"><div><p class="section">شاشة العرض</p><h2 id="picker-title">اختيار التلميذ</h2></div><button id="close-picker" class="secondary" aria-label="إغلاق">×</button></div>
+    <p>اختر المستوى ثم اسم التلميذ. سيظهر موضوعه تلقائيًا بعد تأكيد اختياره.</p>
+    <label class="picker-level" for="projection-level">المستوى<select id="projection-level"></select></label>
+    <label class="search"><input id="student-search" type="search" placeholder="ابحث بالاسم أو برقم التسجيل" aria-label="ابحث بالاسم أو برقم التسجيل"></label>
+    <p id="picker-status" role="status"></p><div id="projection-students" class="projection-students"></div>
+  </dialog>
+</body>
+</html>
